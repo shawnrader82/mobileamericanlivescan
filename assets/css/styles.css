@@ -40,11 +40,12 @@
   --color-accent: #a62b37;
   --color-accent-soft: #f0d7da;
 
-  --radius-sm: 0.375rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
-  --radius-full: 9999px;
+  /* tighter, more professional radii */
+  --radius-sm: 0.25rem;  /* 4px */
+  --radius-md: 0.5rem;   /* 8px - default for buttons/inputs */
+  --radius-lg: 0.75rem;  /* 12px - cards/panels */
+  --radius-xl: 1rem;     /* 16px - hero / rare */
+  --radius-full: 9999px; /* only where truly needed */
 
   --shadow-sm: 0 1px 2px rgba(10, 20, 35, 0.08);
   --shadow-md: 0 10px 30px rgba(10, 20, 35, 0.08);
@@ -425,7 +426,7 @@ h3 {
   justify-content: center;
   min-height: 44px;
   padding: 0.85rem 1.2rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-md); /* was full pill */
   font-size: var(--text-sm);
   font-weight: 700;
   border: 1px solid transparent;
@@ -506,16 +507,17 @@ h3 {
   color: var(--color-text-muted);
 }
 
+/* more institutional bullet marker */
 .hero-points li::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0.72em;
-  width: 0.7rem;
-  height: 0.7rem;
-  border-radius: 50%;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: var(--radius-sm); /* small rounded square */
   background: var(--color-accent);
-  box-shadow: 0 0 0 6px var(--color-accent-soft);
+  box-shadow: none;
 }
 
 .hero-panel {
@@ -535,15 +537,20 @@ h3 {
 .final-cta-panel {
   background: var(--color-surface-2);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg); /* was xl */
   box-shadow: var(--shadow-sm);
 }
 
 .hero-card-primary {
   padding: var(--space-8);
-  background: linear-gradient(180deg, rgba(29, 70, 104, 0.98), rgba(16, 44, 66, 0.98));
+  background: linear-gradient(
+    180deg,
+    rgba(29, 70, 104, 0.98),
+    rgba(16, 44, 66, 0.98)
+  );
   color: var(--color-text-inverse);
   min-height: 15rem;
+  border-radius: var(--radius-xl); /* hero can stay slightly softer */
 }
 
 .hero-card-primary h2 {
@@ -570,7 +577,7 @@ h3 {
   padding: var(--space-5) var(--space-6);
   background: var(--color-surface-2);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg); /* match cards */
   box-shadow: var(--shadow-sm);
 }
 
@@ -591,14 +598,15 @@ h3 {
   color: var(--color-text-muted);
 }
 
+/* less pill, more badge */
 .stat,
 .step-number {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2.5rem;
-  min-height: 2.5rem;
-  border-radius: var(--radius-full);
+  min-width: 2.4rem;
+  min-height: 2.4rem;
+  border-radius: var(--radius-md);
   background: var(--color-primary-highlight);
   color: var(--color-primary);
   font-size: var(--text-xs);
@@ -607,7 +615,11 @@ h3 {
 
 .accent-step-card {
   border-color: rgba(166, 43, 55, 0.25);
-  background: linear-gradient(180deg, var(--color-surface-2), rgba(166, 43, 55, 0.04));
+  background: linear-gradient(
+    180deg,
+    var(--color-surface-2),
+    rgba(166, 43, 55, 0.04)
+  );
 }
 
 /* ==================== */
@@ -655,7 +667,11 @@ h3 {
 
 .feature-large {
   grid-column: span 8;
-  background: linear-gradient(180deg, var(--color-surface-2), var(--color-primary-highlight));
+  background: linear-gradient(
+    180deg,
+    var(--color-surface-2),
+    var(--color-primary-highlight)
+  );
 }
 
 .card-grid {
@@ -756,7 +772,11 @@ h3 {
   display: grid;
   align-content: start;
   gap: var(--space-4);
-  background: linear-gradient(180deg, var(--color-surface-2), rgba(166, 43, 55, 0.03));
+  background: linear-gradient(
+    180deg,
+    var(--color-surface-2),
+    rgba(166, 43, 55, 0.03)
+  );
 }
 
 .institutional-section {
@@ -803,12 +823,13 @@ h3 {
   gap: var(--space-3);
 }
 
+/* less pill, more rectangular chip */
 .location-chip {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
   padding: 0.75rem 1rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-md); /* was full */
   background: var(--color-surface-2);
   border: 1px solid var(--color-border);
   font-size: var(--text-sm);
@@ -890,7 +911,11 @@ h3 {
 .site-footer {
   padding-block: var(--space-12) calc(var(--space-12) + 4rem);
   border-top: 1px solid var(--color-divider);
-  background: color-mix(in srgb, var(--color-surface-2) 80%, var(--color-primary-highlight));
+  background: color-mix(
+    in srgb,
+    var(--color-surface-2) 80%,
+    var(--color-primary-highlight)
+  );
 }
 
 .footer-grid {
