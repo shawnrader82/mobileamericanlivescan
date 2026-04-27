@@ -212,6 +212,93 @@ h3 {
 }
 
 /* ==================== */
+/* BUTTONS              */
+/* ==================== */
+
+.button,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.85rem 1.2rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: var(--shadow-sm);
+  transition:
+    background var(--transition-interactive),
+    color var(--transition-interactive),
+    border-color var(--transition-interactive),
+    box-shadow var(--transition-interactive),
+    transform var(--transition-interactive);
+}
+
+.button:hover,
+.button:focus-visible,
+.btn:hover,
+.btn:focus-visible {
+  text-decoration: none;
+}
+
+.button-primary,
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: color-mix(in srgb, var(--color-primary) 72%, black 28%);
+}
+
+.button-primary:hover,
+.button-primary:focus-visible,
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--color-primary-hover);
+  border-color: color-mix(in srgb, var(--color-primary-hover) 72%, black 28%);
+  color: var(--color-text-inverse);
+}
+
+.button-secondary,
+.btn-secondary {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible,
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: var(--color-surface-offset);
+  color: var(--color-text);
+  border-color: var(--color-primary);
+}
+
+.button-ghost,
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+  box-shadow: none;
+}
+
+.button-ghost:hover,
+.button-ghost:focus-visible,
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  background: var(--color-surface-2);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+/* ==================== */
 /* LAYOUT / UTILITIES   */
 /* ==================== */
 
@@ -1177,9 +1264,16 @@ body {
     padding: var(--space-5);
   }
 
+  /* default: buttons go full width on small screens */
   .button,
   .btn {
     width: 100%;
+  }
+
+  /* EXCEPTION: header CTAs stay compact in the top bar */
+  .header-actions .button,
+  .header-actions .btn {
+    width: auto;
   }
 
   .hero-actions,
