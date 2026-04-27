@@ -495,34 +495,44 @@ h3 {
   font-weight: 700;
 }
 
-.hero-points {
-  display: grid;
-  gap: var(--space-3);
-  margin-top: var(--space-2);
-}
-
-.hero-points li {
-  position: relative;
-  padding-left: var(--space-6);
-  color: var(--color-text-muted);
-}
-
-/* more institutional bullet marker */
-.hero-points li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.72em;
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: var(--radius-sm); /* small rounded square */
-  background: var(--color-accent);
-  box-shadow: none;
-}
-
 .hero-panel {
   display: grid;
   gap: var(--space-4);
+}
+
+.hero-route-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.hero-route-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-route-item strong {
+  display: block;
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-1);
+}
+
+.hero-route-item small {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.hero-route-item:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 30%, var(--color-border));
+  transform: translateY(-1px);
 }
 
 .hero-card,
@@ -537,7 +547,7 @@ h3 {
 .final-cta-panel {
   background: var(--color-surface-2);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg); /* was xl */
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
 }
 
@@ -550,7 +560,7 @@ h3 {
   );
   color: var(--color-text-inverse);
   min-height: 15rem;
-  border-radius: var(--radius-xl); /* hero can stay slightly softer */
+  border-radius: var(--radius-xl);
 }
 
 .hero-card-primary h2 {
@@ -577,7 +587,7 @@ h3 {
   padding: var(--space-5) var(--space-6);
   background: var(--color-surface-2);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg); /* match cards */
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
 }
 
@@ -598,7 +608,6 @@ h3 {
   color: var(--color-text-muted);
 }
 
-/* less pill, more badge */
 .stat,
 .step-number {
   display: inline-flex;
