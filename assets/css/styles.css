@@ -368,9 +368,9 @@ h3 {
 .header-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: var(--space-3);
   flex-wrap: nowrap;
-  justify-content: flex-end;
 }
 
 .header-cta {
@@ -381,7 +381,6 @@ h3 {
   padding-inline: var(--space-4);
   white-space: nowrap;
   flex: 0 0 auto;
-  flex-shrink: 0;
   width: auto;
 }
 
@@ -437,7 +436,6 @@ h3 {
   display: none;
 }
 
-/* offset page content for fixed header */
 body {
   padding-top: 4.75rem;
 }
@@ -486,7 +484,7 @@ body {
 
   .site-header-inner {
     grid-template-columns: auto 1fr auto;
-    min-height: 4.1rem;
+    min-height: 4rem;
     gap: var(--space-2);
   }
 
@@ -495,54 +493,59 @@ body {
   }
 
   .brand-mark {
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 0.18rem;
+    width: 2.35rem;
+    height: 2.35rem;
+    padding: 0.16rem;
   }
 
   .brand-text strong {
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     line-height: 1.05;
     letter-spacing: 0;
   }
 
   .header-actions {
-    gap: 0.4rem;
+    gap: 0.35rem;
   }
 
   .header-cta {
-    min-height: 2.25rem;
-    padding-inline: 0.7rem;
-    font-size: 0.74rem;
+    min-height: 2.15rem;
+    padding-inline: 0.65rem;
+    font-size: 0.72rem;
     line-height: 1;
     border-radius: var(--radius-sm);
   }
 
   .menu-toggle {
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.15rem;
+    height: 2.15rem;
   }
 
   body {
-    padding-top: 4.1rem;
+    padding-top: 4rem;
   }
 }
 
 @media (max-width: 520px) {
   .site-header-inner {
-    grid-template-columns: auto 1fr auto;
-    gap: 0.35rem;
-    min-height: 3.75rem;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 3.6rem;
+    gap: 0.5rem;
   }
 
   .brand {
+    display: inline-flex;
+    align-items: center;
     gap: 0;
+    min-width: auto;
   }
 
   .brand-mark {
-    width: 2rem;
-    height: 2rem;
-    padding: 0.12rem;
+    width: 1.9rem;
+    height: 1.9rem;
+    padding: 0.1rem;
   }
 
   .brand-text {
@@ -550,29 +553,30 @@ body {
   }
 
   .header-actions {
-    gap: 0.3rem;
-    max-width: 9.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.25rem;
+    min-width: 0;
   }
 
   .header-cta {
-    min-height: 2rem;
+    min-height: 1.95rem;
     padding-inline: 0.5rem;
-    font-size: 0.66rem;
+    font-size: 0.64rem;
     font-weight: 700;
     border-radius: var(--radius-sm);
-    max-width: 4.5rem;
-    text-align: center;
+    max-width: none;
   }
 
   .menu-toggle {
     display: inline-flex;
-    width: 2rem;
-    height: 2rem;
-    flex-shrink: 0;
+    width: 1.95rem;
+    height: 1.95rem;
   }
 
   body {
-    padding-top: 3.75rem;
+    padding-top: 3.6rem;
   }
 }
 
